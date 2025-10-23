@@ -1,0 +1,12 @@
+# cpp exclude section
+cpp/mnist_ml/build
+cpp/**/obj
+cpp/**/*.exe
+cpp/**/*.o
+
+# Python exclude section
+python/**/venv
+python/**/__pycache__
+
+# R exclude section
+

@@ -1,0 +1,110 @@
+#include "iostream"
+#include "stdio.h"
+#include "stdint.h"
+#include "string"
+
+class MyIdentifier
+{
+    int val;
+    public:
+    MyIdentifier()
+    {
+
+    };
+    MyIdentifier(int in_val)
+    {
+        val = in_val;
+    };
+    enum type
+    {
+        ONE = 0,
+        TWO = 1,
+        THREE = 2,
+        ERROR = -99
+    };
+    static int toint(MyIdentifier::type val)
+    {
+        switch (val)
+        {
+            case ONE:
+                return 0;
+            case TWO:
+                return 1;
+            case THREE:
+                return 2;
+            default:
+                return -99;
+        }
+    }
+    static enum MyIdentifier::type fromint(int val)
+    {
+        switch (val)
+        {
+        case 0:
+            return ONE;
+        case 1:
+            return TWO;
+        case 2:
+            return THREE;
+        default:
+            return ERROR;
+        }
+    }
+};
+
+int main()
+{
+    // std::string in_value = "";
+    int in_value = 0;
+    MyIdentifier *mi = new MyIdentifier();
+    while(in_value != -1)
+    {
+        std::cout << "Type your number: ";
+        std::cin >> in_value;
+        // MyIdentifier::type int_val = mi->fromint(0);
+        // switch (mi->fromint(std::stoi(in_value)))
+        switch (mi->fromint(in_value))
+        {
+        case MyIdentifier::ONE:
+            std::cout << 0 << std::endl;
+            break;
+        case MyIdentifier::TWO:
+            std::cout << 1 << std::endl;
+            break;
+        case MyIdentifier::THREE:
+            std::cout << 2 << std::endl;
+            break;
+        default:
+            std::cout << -99 << std::endl;
+        }
+    }
+    // enum Level myVar = ZERO;
+    // switch (myVar)
+    // {
+    //     case 0:
+    //         std::cout << "LOW" << std::endl;
+    //         break;
+    //     case 1:
+    //         std::cout << "MEDIUM" << std::endl;
+    //         break;
+    //     case 2:
+    //         std::cout << "HIGH" << std::endl;
+    //         break;
+    // }
+
+    // int myInt = 1;
+    // MyEnum myEnumValue = static_cast<MyEnum>(myInt);
+    // switch (myEnumValue)
+    // {
+    // case (MyEnum)ZERO:
+    //     std::cout << "LOW" << std::endl;
+    //     break;
+    // case (MyEnum)ONE:
+    //     std::cout << "MEDIUM" << std::endl;
+    //     break;
+    // case (MyEnum)TWO:
+    //     std::cout << "HIGH" << std::endl;
+    //     break;
+    // }
+    return 0;
+}

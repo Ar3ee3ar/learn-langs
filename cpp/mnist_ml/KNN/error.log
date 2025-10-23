@@ -1,0 +1,2 @@
+g++ -shared -std=c++20 -DEUCLID D:/personal_proj/ml-basic/c++/ETL/knn/src/knn.cc -o main -LD:/personal_proj/ml-basic/c++/ETL/lib/ -I D:/personal_proj/ml-basic/c++/ETL/knn/include\
+-I D:/personal_proj/ml-basic/c++/ETL/include -ldata
